@@ -1,0 +1,136 @@
+@CHARSET "ISO-8859-1";
+
+.h2
+{
+    font-size: 12pt;
+    line-height: 10px;
+    padding: 10px 0;
+}
+
+
+.table
+{
+position: absolute;
+left: 200px;
+top: 300px;
+]
+}
+
+.p {
+  position: absolute;
+  background-color: green;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+
+.span 
+{
+  color: white;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+
+
+.navbar-default {
+  height: 60px;
+  background-color: #212F3D;
+  border-color: #FBFCFC;
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: white;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #FBFCFC;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #FBFCFC;
+}
+.navbar-default .navbar-toggle {
+  border-color: #FBFCFC;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #FBFCFC;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FBFCFC;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #FBFCFC;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ecdbff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: white;
+    background-color: #060b0d;
+  }
+}
+
+
+.carousel-control.left
+			{
+				background: none;
+			}
+			.carousel-control.right
+			{
+				background: none;
+			}
+
+			.carousel-control
+			{
+				position: absolute;
+				top: 45%;
+				bottom: 0;
+				left: 0;
+				width: 30%;
+				font-size: auto;
+				color: white;
+				text-align: center;
+				opacity: 1;
+				text-shadow: none;
+			}
+			.carousel-control:hover
+			{
+				color: #212F3D;
+			}
+			.carousel-indicators
+			{
+				bottom: -50px;
+			}
