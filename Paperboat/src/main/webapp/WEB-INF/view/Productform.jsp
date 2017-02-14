@@ -61,6 +61,7 @@
       style="background-color: white; color: black; text-align: center;"
       height="30px">
       
+      
       <td><c:out value="${pd.productid}" />
       </td>
       <td><c:out value="${pd.name}" />
