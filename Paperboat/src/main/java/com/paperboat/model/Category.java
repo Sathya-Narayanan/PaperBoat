@@ -1,4 +1,5 @@
 package com.paperboat.model;
+
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,6 @@ public class Category
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;
 private String categoryDetails;
-
 @OneToMany(mappedBy="category")
 private List<Product> products;
 public int getId() {
@@ -38,5 +38,3 @@ public void setProducts(List<Product> products) {
 
 
 }
-
-

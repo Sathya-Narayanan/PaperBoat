@@ -5,15 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import com.paperboat.Dao.ProductDao;
+
+import com.paperboat.dao.ProductDao;
 import com.paperboat.model.Product;
 
+@Service("productService")
 
-
-@Service("ProductService")
-
-public class ProductServiceImpl implements ProductService
-{
+public class ProductServiceImpl implements ProductService {
+	
 	@Autowired
 	private ProductDao productDao;
 

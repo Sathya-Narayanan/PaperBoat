@@ -1,6 +1,4 @@
 package com.paperboat.controller;
-
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,15 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import com.paperboat.model.Product;
+
 import com.paperboat.service.ProductService;
+import com.paperboat.model.Product;
 
 
 @Controller
-public class ProductController 
-{
+public class ProductController {
+
 	@Autowired
-	private ProductService ProductService;
+	private ProductService productService;
+	
 	
 	public ProductController()
 	{
@@ -27,7 +27,14 @@ public class ProductController
 	@RequestMapping("/Productform")
 	public ModelAndView gotoProduct(@ModelAttribute("prdfrm")Product prdfrm) 
 	{
-		  return new ModelAndView("Productform");
+		  
+		return new ModelAndView("Productform");
+	}
+	
+	@RequestMapping("/addProducts")
+	public String addProducts()
+	{
+		return "addProducts";
 	}
 	
 	
@@ -35,15 +42,15 @@ public class ProductController
 	public ModelAndView saveProduct(@ModelAttribute("prdfrm")Product prdfrm)
 	{
 		
-		ProductService.insertRow(prdfrm);
-		List<Product> ls=ProductService.getList();
+		productService.insertRow(prdfrm);
+		List<Product> ls=productService.getList();
 		return new ModelAndView("Productform","productList",ls);
 	}
 	
 	@RequestMapping("/listProducts")
 	public ModelAndView listallProducts()
 	{
-		List<Product> ls=ProductService.getList();
+		List<Product> ls=productService.getList();
 		return new ModelAndView("listProducts","productList",ls);
 	}
 	
@@ -51,14 +58,14 @@ public class ProductController
 	public ModelAndView deleteproduct(@RequestParam int id)
 	{
 		
-		ProductService.deleteRow(id);
+		productService.deleteRow(id);
 		return new ModelAndView("redirect:listProducts");
 	}
 	
 	@RequestMapping("/editProduct")
 	public ModelAndView editproduct(@ModelAttribute("prdfrm")Product prdfrm,@RequestParam int id)
 	{
-		prdfrm=ProductService.getRowById(id);
+		prdfrm=productService.getRowById(id);
 		ModelAndView mv=new ModelAndView("editProduct","prod",prdfrm);
 		return mv;
 		
@@ -68,7 +75,7 @@ public class ProductController
 	@RequestMapping(value="updateProduct",method=RequestMethod.POST)
 	public ModelAndView updateproduct(@ModelAttribute("prdfrm")Product prdfrm)
 	{
-		ProductService.updateRow(prdfrm);
+		productService.updateRow(prdfrm);
 		return new ModelAndView("redirect:listProducts");
 		
 	}

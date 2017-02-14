@@ -1,14 +1,14 @@
-package com.paperboat.service;
+package com.paperboat.dao;
+
 import java.util.List;
-
-
 import com.paperboat.model.Product;
 
-public interface ProductService {
-	
+
+public interface ProductDao {
+
 	public int insertRow(Product prd);
 
-	public List<Product> getList();
+	 public List<Product> getList();
 
 	 public Product getRowById(int id);
 
