@@ -62,7 +62,7 @@
       height="30px">
            
       <td><c:out value="${pd.productid}" />
-      </td>
+     </td>
       <td><c:out value="${pd.name}" />
       </td>
       <td><c:out value="${pd.description}" />
