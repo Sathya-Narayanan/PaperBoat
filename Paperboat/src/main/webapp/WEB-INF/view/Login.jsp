@@ -6,7 +6,8 @@
 <title>Login</title>
 </head>
 <body bgcolor="#D5F5E3" background="<c:url value='/resource/Images/Fly.jpg" style="width:100%; height:auto;'/> "> 
-	<%@include file="Header.jsp" %>
+<%@include file="Header.jsp" %>
+
 	<form action="./LoginCheck" method="post">
 
 	<h1 style="text-align:center; font-face:cambria">Ready to sail away?</h1>

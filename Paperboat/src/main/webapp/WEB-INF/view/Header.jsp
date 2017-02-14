@@ -40,6 +40,7 @@
       <li class="navbar-right"><a href="Register"><span class="glyphicon glyphicon-user-add"></span> Sign Up</a></li>
       <li class="navbar-right"><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       <li class="navbar-right"><a href="Aboutus">Self bragging</a></li>
+      <li class="navbar-right"><a href="Productform">Product form</a></li>
     </ul>
       </div>
  </nav> 		

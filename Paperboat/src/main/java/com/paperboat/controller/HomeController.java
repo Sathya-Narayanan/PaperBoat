@@ -26,12 +26,12 @@ public class HomeController {
 		return "Index";
 	}
 
-
-@RequestMapping("/Index")
+/*@RequestMapping("/Index")
 public String gotoHome1()
 {
 	return "Index";
-}
+}*/
+ 
 
 @RequestMapping("/Login")
 public String gotoHome2()

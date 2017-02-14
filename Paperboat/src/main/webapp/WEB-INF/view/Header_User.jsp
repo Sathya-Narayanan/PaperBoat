@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Header_User</title>
 </head>
+
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top" >
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="Index"><font face="Cambria">Paperboat</font></a>
@@ -35,7 +36,7 @@
       </form>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-right"><a href="Index"><span class="glyphicon glyphicon-user-add"></span>Logout</a></li>
-      <li class="navbar-right"><a href="#">Welcome Sathya</a></li>
+      <li class="navbar-right"><a href="#">Welcome Sathya,</a></li>
       <li class="navbar-right"><a href="Aboutus">Self bragging</a></li>
     </ul>
       </div>

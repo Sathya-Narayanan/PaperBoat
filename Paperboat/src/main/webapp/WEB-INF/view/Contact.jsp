@@ -9,7 +9,7 @@
   
 </head>
 <body bgcolor="#5DADE2">
-<%@include file="Header_User.jsp" %>
+
 <p align="center"><font face="cambria">
 Book world
 <br/>#1354
