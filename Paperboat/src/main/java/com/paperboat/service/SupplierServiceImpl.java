@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.paperboat.dao.SupplierDao;
 import com.paperboat.model.Supplier;
 
+
 @Service("supplierService")
 public class SupplierServiceImpl implements SupplierService 
 {
