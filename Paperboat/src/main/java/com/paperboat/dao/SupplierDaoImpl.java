@@ -1,27 +1,25 @@
 package com.paperboat.dao;
 
 import java.util.List;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.paperboat.model.Category;
-
-@Repository("categoryDao")
-public class CategoryDaoImpl implements CategoryDao
-{
+import com.paperboat.model.Supplier;
+@Repository("supplierDao")
+public class SupplierDaoImpl implements SupplierDao {
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public List<Category> getCategories() 
-	{
+	public List<Supplier> getSuppliers() {
 		Session session=sessionFactory.openSession();
-		Query query = session.createQuery("from Category");
-		List<Category> categories=query.list();
+		Query query = session.createQuery("from Supplier");
+		List<Supplier> suppliers=query.list();
 		session.close();
-		return categories;
+		return suppliers;
 	}
+
 }

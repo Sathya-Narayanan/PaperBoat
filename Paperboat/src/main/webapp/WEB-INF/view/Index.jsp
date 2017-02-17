@@ -62,6 +62,7 @@
   </a>
 </div>
 <!-- Image not displaying within exact position - used the size accurately  -->
+<%@include file="footer.jsp" %>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

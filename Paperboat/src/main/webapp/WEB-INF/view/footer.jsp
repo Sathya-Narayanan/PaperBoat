@@ -11,21 +11,33 @@
 </head>
 
 <body>
- 
+<!-- Start of the footer -->
+<footer class="site-footer">
 
-    <div class="footer">
-      <div class="container">
-              <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-twitter fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-rss fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-vine fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-flickr fa-3x fa-fw"></i></a>
-              <a href='#'><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
-            </span>
-      </div>
-    </div>
+	<div class="container">
+	<div class=""row">
+	<p>This is my footer</p>
+	</div>
+<div class="bottom-footer">
+<div class="col-md-5"></div>
+<div class="col-md-7">
+
+<ul>
+	<li><a href=""></a>Support</li>
+	<li><a href=""></a>Support1</li>
+	<li><a href="Aboutus.jsp"></a>About us</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</footer>
+
+<script type="text/javascript" src="js/footer.js"></script> 
+<script type="text/javascript" src="js/contactFade.js"></script>
+</body>
+ </html>
 
     <script type="text/javascript" src="js/footer.js"></script> -->
     <script type="text/javascript" src="js/contactFade.js"></script>

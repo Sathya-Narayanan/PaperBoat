@@ -7,6 +7,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/> "/>
   <link rel="stylesheet" href="<c:url value='/resource/mycss/Index.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/resource/mycss/Footer.css'/>" />
   
 </head>
 <body>
@@ -22,8 +23,7 @@
     </ul>
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genre
-        <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genre<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#"><font face="Cambria">Literature</font></a></li>
           <li><a href="#"><font face="Cambria">Fantasy</font></a></li>
@@ -45,7 +45,8 @@
       </div>
  </nav> 		
 <script src="<c:url value='/resource/js/bootstrap.min.js'/> "/></script>
- 		
- 		
-</body>
- </html>
+
+
+
+
+ 

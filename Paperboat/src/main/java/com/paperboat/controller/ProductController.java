@@ -1,34 +1,46 @@
 package com.paperboat.controller;
+
+/*import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;*/
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.paperboat.service.ProductService;
 import com.paperboat.model.Product;
-
+import com.paperboat.service.CategoryService;
+import com.paperboat.service.ProductService;
+import com.paperboat.service.SupplierService;
 
 @Controller
-public class ProductController {
-
+public class ProductController 
+{
 	@Autowired
 	private ProductService productService;
-	
+	@Autowired
+	private CategoryService categoryService;
+	@Autowired
+	private SupplierService supplierService;
 	
 	public ProductController()
 	{
 		System.out.println("Creating instance for ProductController");
 	}
 	
-	@RequestMapping("/Productform")
-	public ModelAndView gotoProduct(@ModelAttribute("prdfrm")Product prdfrm) 
+	@RequestMapping("/ProductForm")
+	public ModelAndView gotoProduct(Model model,@ModelAttribute("prdfrm")Product prdfrm) 
 	{
-		  
-		return new ModelAndView("Productform");
+		  model.addAttribute("categories",categoryService.getCategories());
+		  model.addAttribute("suppliers",supplierService.getSuppliers());
+		return new ModelAndView("ProductForm");
 	}
 	
 	@RequestMapping("/addProducts")
@@ -38,14 +50,28 @@ public class ProductController {
 	}
 	
 	
-	@RequestMapping(value = "saveProduct", method = RequestMethod.POST)
+	/*@RequestMapping(value = "saveProduct", method = RequestMethod.POST)
 	public ModelAndView saveProduct(@ModelAttribute("prdfrm")Product prdfrm)
 	{
 		
 		productService.insertRow(prdfrm);
 		List<Product> ls=productService.getList();
-		return new ModelAndView("Productform","productList",ls);
-	}
+		MultipartFile prodImage=prdfrm.getImage();
+		if(!prodImage.isEmpty()){
+			Path paths=
+	Paths.get("C:/Users/vetri/git/TyresSite/HotSpares/src/main/webapp/resource/bootstrap/images/"+ prdfrm.getProductid()+".png");
+		try {
+			prodImage.transferTo(new File(paths.toString()));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		return new ModelAndView("listProducts","productList",ls);
+	}*/
 	
 	@RequestMapping("/listProducts")
 	public ModelAndView listallProducts()
@@ -80,6 +106,14 @@ public class ProductController {
 		
 	}
 	
-
+	@RequestMapping("/ProductsByCategory")
+	public String getProductsByCategory(@RequestParam(name="searchCondition") String searchCondition,
+			Model model){
+		List<Product> products=productService.getList();
+		//Assigning list of products to model attribute products
+		model.addAttribute("listProducts",products);
+		model.addAttribute("searchCondition",searchCondition);
+		return "listProducts";
+	}
 	
 }
