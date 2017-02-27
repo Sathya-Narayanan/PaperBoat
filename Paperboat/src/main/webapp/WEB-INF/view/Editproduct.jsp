@@ -39,7 +39,7 @@
       </td>
       <td><c:out value="${pd.price}" />
       </td>
-      <td><a href="editProduct?id=${pd.productid}">Edit</a></td>
+      <td><a href="EditProduct?id=${pd.productid}">Edit</a></td>
       <td><a href="deleteProduct?id=${pd.productid}">Delete</a></td>
      </tr>
     </c:forEach>

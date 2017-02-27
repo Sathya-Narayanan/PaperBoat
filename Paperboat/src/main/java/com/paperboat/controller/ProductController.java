@@ -1,9 +1,9 @@
 package com.paperboat.controller;
 
-/*import java.io.File;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;*/
+import java.nio.file.Paths;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.paperboat.model.Product;
@@ -35,12 +35,12 @@ public class ProductController
 		System.out.println("Creating instance for ProductController");
 	}
 	
-	@RequestMapping("/ProductForm")
+	@RequestMapping("/Productform")
 	public ModelAndView gotoProduct(Model model,@ModelAttribute("prdfrm")Product prdfrm) 
 	{
 		  model.addAttribute("categories",categoryService.getCategories());
 		  model.addAttribute("suppliers",supplierService.getSuppliers());
-		return new ModelAndView("ProductForm");
+		return new ModelAndView("Productform");
 	}
 	
 	@RequestMapping("/addProducts")
@@ -50,7 +50,7 @@ public class ProductController
 	}
 	
 	
-	/*@RequestMapping(value = "saveProduct", method = RequestMethod.POST)
+	@RequestMapping(value = "saveProduct", method = RequestMethod.POST)
 	public ModelAndView saveProduct(@ModelAttribute("prdfrm")Product prdfrm)
 	{
 		
@@ -59,7 +59,7 @@ public class ProductController
 		MultipartFile prodImage=prdfrm.getImage();
 		if(!prodImage.isEmpty()){
 			Path paths=
-	Paths.get("C:/Users/vetri/git/TyresSite/HotSpares/src/main/webapp/resource/bootstrap/images/"+ prdfrm.getProductid()+".png");
+	Paths.get("C:/Users/Sathya/git/PaperBoat/Paperboat/src/main/webapp/resource/Images/"+ prdfrm.getProductid()+".jpg");
 		try {
 			prodImage.transferTo(new File(paths.toString()));
 		} catch (IllegalStateException e) {
@@ -70,14 +70,14 @@ public class ProductController
 			e.printStackTrace();
 		}
 		}
-		return new ModelAndView("listProducts","productList",ls);
-	}*/
+		return new ModelAndView("listProduct","productList",ls);
+	}
 	
-	@RequestMapping("/listProducts")
+	@RequestMapping("/listProduct")
 	public ModelAndView listallProducts()
 	{
 		List<Product> ls=productService.getList();
-		return new ModelAndView("listProducts","productList",ls);
+		return new ModelAndView("listProduct","productList",ls);
 	}
 	
 	@RequestMapping("deleteProduct")
@@ -85,7 +85,7 @@ public class ProductController
 	{
 		
 		productService.deleteRow(id);
-		return new ModelAndView("redirect:listProducts");
+		return new ModelAndView("redirect:listProduct");
 	}
 	
 	@RequestMapping("/editProduct")
@@ -111,9 +111,9 @@ public class ProductController
 			Model model){
 		List<Product> products=productService.getList();
 		//Assigning list of products to model attribute products
-		model.addAttribute("listProducts",products);
+		model.addAttribute("listProduct",products);
 		model.addAttribute("searchCondition",searchCondition);
-		return "listProducts";
+		return "listProduct";
 	}
 	
 }

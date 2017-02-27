@@ -1,37 +1,48 @@
 package com.paperboat.model;
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Min;
+import javax.persistence.Transient;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 
-public class Product  implements Serializable {
-
+public class Product implements Serializable {
+	
 	private static final long serialVersionUID = -723583058586873479L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer productid; 
-	@NotEmpty(message="Name is mandatory")
+    private Integer productid;
 	private String name;
-		@NotEmpty(message="Description is mandatory")
-	private Date mfg;
-		
 	private String description;
-	@Min(value=10,message="Minimum value of price must be 10Rs")
 	private Double price;
-	@Min(value=1,message="minimum qantity must be 1")
 	@ManyToOne
 	@JoinColumn(name="cid")
 	private Category category;
+	@ManyToOne
+	@JoinColumn(name="supplier")
+	private Supplier supplier;
+	@Transient 
+	private MultipartFile image;
+	
+	
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
 	public Category getCategory() {
 		return category;
 	}
@@ -63,6 +74,7 @@ public class Product  implements Serializable {
 		this.price = price;
 	}
 	
-		
+	
+	
+	
 }
-
