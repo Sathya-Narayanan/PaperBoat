@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ProductList</title>
 </head>
+
 <body>
 <center>
 <div style="color: teal; font-size: 30px">List of products</div>
