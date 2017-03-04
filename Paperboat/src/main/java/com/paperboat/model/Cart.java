@@ -14,6 +14,9 @@ private int id;
 private double grandTotal;
 @OneToOne
 private Customer customer;
+
+					/*Generating Getters and Setters Method*/
+
 public int getId() {
 	return id;
 }

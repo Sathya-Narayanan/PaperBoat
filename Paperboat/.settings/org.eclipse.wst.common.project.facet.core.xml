@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-<<<<<<< HEAD
-  <runtime name="Apache Tomcat v9.0 (2)"/>
-=======
->>>>>>> branch 'master' of https://github.com/Sathya-Narayanan/PaperBoat.git
   <fixed facet="wst.jsdt.web"/>
-  <installed facet="jst.web" version="2.3"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
+  <installed facet="jst.web" version="2.3"/>
   <installed facet="java" version="1.5"/>
 </faceted-project>

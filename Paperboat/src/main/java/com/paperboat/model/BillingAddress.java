@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class BillingAddress {
 	
@@ -12,13 +14,22 @@ public class BillingAddress {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
 private int Id;
-private String apartmentNumber; 
+	@NotEmpty(message= "Apartment Number cannot be blank")   //to prevent null values in the fields
+private String apartmentNumber;
+	@NotEmpty(message= "streetName cannot be blank")
 private String streetName;
+	@NotEmpty(message= "City cannot be blank")
 private String city;
+	@NotEmpty(message= "state cannot be blank")	
 private String state;
+	@NotEmpty(message= "country cannot be blank")
 private String country;
+	@NotEmpty(message= "Zipcode  cannot be blank")
 private String zipcode;
-public int getId() {
+	
+							/*Generating Getter and Setters Methods*/
+	
+	public int getId() {
 	return Id;
 }
 public void setId(int id) {

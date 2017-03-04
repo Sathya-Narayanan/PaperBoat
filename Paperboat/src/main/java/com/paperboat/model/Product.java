@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -17,16 +20,26 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = -723583058586873479L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer productid;
+	private Integer productid;
+	
+	@NotEmpty(message="Product Name is mandatory")
 	private String name;
+	
+	@NotEmpty(message="Product description is mandatory")
 	private String description;
+	
+	@Min(value=50,message="Minimum value of a book is 50")
 	private Double price;
+		
 	@ManyToOne
 	@JoinColumn(name="cid")
+	@NotNull(message="Category cannot be blank")
 	private Category category;
+	
 	@ManyToOne
 	@JoinColumn(name="supplier")
 	private Supplier supplier;
+	
 	@Transient 
 	private MultipartFile image;
 	

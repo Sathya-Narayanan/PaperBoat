@@ -17,6 +17,9 @@ private int id;
 private String categoryDetails;
 @OneToMany(mappedBy="category")
 private List<Product> products;
+
+						/*Generating Getters and Setters Methods*/
+
 public int getId() {
 	return id;
 }

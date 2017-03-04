@@ -12,6 +12,7 @@ public class Authorities
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 	@Column(unique=true)
+	
 private String username;
 private String role;
 public int getId() {

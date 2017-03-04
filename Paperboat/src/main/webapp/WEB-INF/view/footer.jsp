@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<<<<<< HEAD
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@page isELIgnored="false" %>
+
 <html>
 <head>
 <link rel="shortcut icon" href="C:\Users\Sathya\workspace\E commerce\favicon.ico" />
@@ -45,18 +47,4 @@
     
     </body>
     </html>
-    
-=======
-<!DOCTYPE html>
-<html>
-<head>
 
-<title>footer</title>
-<link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/> "/>
-<link rel="stylesheet" href="<c:url value='/resource/mycss/Index.css'/>" />
-</head>
-<body>
-<p>
-</body>
-</html>
->>>>>>> branch 'master' of https://github.com/Sathya-Narayanan/PaperBoat.git
